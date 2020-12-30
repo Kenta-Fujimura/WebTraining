@@ -9,8 +9,8 @@
 <body>
 <h1>どこつぶへようこそ</h1>
 <form action="/docoTsubu/Login" method="post">
-ユーザー名：<input Type="text " name= "name"><br>
-パスワード：<input Type="password" name="pass"><br>
+ユーザー名：<input type="text" name= "name"><br>
+パスワード：<input type="password" name="pass"><br>
 <input Type="submit" value="ログイン">
 </form>
 </body>

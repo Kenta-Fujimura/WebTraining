@@ -21,18 +21,22 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response)
 			throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("Name");
+		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
 		User user = new User(name,pass);
 		LoginLogic loginLogic = new LoginLogic();
 		boolean isLogin = loginLogic.execute(user);
+
 		if(isLogin) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", user);
 		}
+
 		RequestDispatcher dispatcher =
-				request.getRequestDispatcher("/WEB-INF/jsp/loginResult.jsp");
+				request.getRequestDispatcher(
+				"/WEB-INF/jsp/loginResult.jsp");
 		dispatcher.forward(request, response);
 	}
 }

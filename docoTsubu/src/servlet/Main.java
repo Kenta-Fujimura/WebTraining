@@ -21,17 +21,18 @@ import model.User;
 public class Main extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request,HttpServletResponse response)
-	throws ServletException,IOException{
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response)
+			throws ServletException,IOException{
 		ServletContext application = this.getServletContext();
 		List<Mutter> mutterList =
-				(List<Mutter>)application.getAttribute("mutterList");
+				(List<Mutter>) application.getAttribute("mutterList");
 		if(mutterList == null) {
 			mutterList = new ArrayList<>();
 			application.setAttribute("mutterList",mutterList);
 		}
 		HttpSession session = request.getSession();
-		User loginUser = (User)session.getAttribute("loginUser");
+		User loginUser = (User) session.getAttribute("loginUser");
 		if(loginUser == null) {
 			response.sendRedirect("/docoTsubu/");
 		}else {
@@ -50,7 +51,7 @@ public class Main extends HttpServlet{
 
 		if(text != null && text.length()!= 0) {
 			ServletContext application = this.getServletContext();
-			List<Mutter>mutterList =
+			List<Mutter> mutterList =
 					(List<Mutter>) application.getAttribute("mutterList");
 			HttpSession session = request.getSession();
 			User Loginuser = (User)session.getAttribute("loginUser");
@@ -60,7 +61,8 @@ public class Main extends HttpServlet{
 			postMutterLogic.execute(mutter, mutterList);
 			application.setAttribute("mutterList", mutterList);
 		}else {
-			request.setAttribute("errorMsg", "つぶやきが入力されていません");
+			request.setAttribute("errorMsg",
+					"つぶやきが入力されていません");
 		}
 			RequestDispatcher dispatcher =
 					request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");

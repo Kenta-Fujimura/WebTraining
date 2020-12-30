@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ page import="model.User,model.Mutter,java.util.List" %>
 <%
+
 User loginUser = (User)session.getAttribute("loginUser");
-List<Mutter>mutterList = (List<Mutter>)application.getAttribute("mutterList");
+
+List<Mutter> mutterList =
+	(List<Mutter>) application.getAttribute("mutterList");
 String errorMsg = (String)request.getAttribute("errorMsg");
 %>
 <!DOCTYPE html>
@@ -20,11 +22,11 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 <a href="/docoTsubu/Logout">ログアウト</a>
 </p>
 <p><a href="/docoTsubu/Main">更新</a></p>
-<form action="docoTsubu/Main" method="post">
+<form action="/docoTsubu/Main" method="post">
 <input Type="text" name = "text">
 <input Type="submit" value= "つぶやく">
 </form>
-<%if(errorMsg!=null){ %>
+<% if(errorMsg!=null){ %>
 <p><%=errorMsg  %></p>
 <%} %>
 <% for(Mutter mutter : mutterList){ %>

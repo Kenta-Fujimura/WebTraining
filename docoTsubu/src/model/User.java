@@ -4,6 +4,7 @@ import java.io.Serializable;
 public class User implements Serializable{
 	private String name;
 	private String pass;
+
 	public User() {}
 	public User(String name, String pass) {
 		this.name = name;
