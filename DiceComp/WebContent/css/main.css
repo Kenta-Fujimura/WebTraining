@@ -1,0 +1,99 @@
+body {
+	background: url(../images/bg.jpg);
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#dices {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 3vh;
+	border-bottom: 3px dotted white;
+}
+
+#dices img {
+	width: 12vw;
+	height: 12vw;
+	max-width: 170px;
+	margin: 2vmin;
+}
+
+#dice img {
+	/*最初は透明にして見えないようにしておく*/
+	opacity: 0;
+}
+
+button {
+	font-family: 'Audiowide', cursive;
+	width: 80vw;
+	font-size: 10vmin;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button span {
+	font-size: 5vmin;
+	opacity: 0;
+}
+.diceHidden {
+	display: none;
+}
+
+.diceOut {
+	animation-name: diceOut;
+	animation-delay: 1.5s;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes diceOut {
+	to{
+		width:  0;
+		margin: 0;
+		opacity: 0;
+	}
+}
+.diceIn {
+	animation-name: diceIn;
+	animation-delay: 0.5s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes diceIn {
+	from {
+		width:0;
+		height: 0;
+		opacity: 0;
+		transform: rotateX(0);
+	}
+	to {
+		width: 15vw;
+		height: 15vw;
+		opacity: 1;
+		transform: rotateX(360deg);
+	}
+}
+.result {
+	display: block;
+	animation-name: result;
+	animation-delay: 1.5s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes result {
+	from {
+		opacity:0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

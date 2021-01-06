@@ -1,0 +1,38 @@
+﻿body{
+	display:flex;
+	height:40vh;
+	flex-direction:column;
+	align-items:center;
+	background:#000000;
+	color: #ffffff;
+}
+table{border: solid 1px #ffffff; border-collapse: collapse;}
+td{
+	border: solid 1px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+}
+
+img{
+	width:17vh;
+	justify-content:space-around;
+}
+.fadein{
+	opacity:0;
+	animation:fadein 6s ease forwards;
+
+}
+@keyframes fadein{
+	100% {opacity: 1;}
+
+}
+
+.img01{animation-delay: 1s;}
+.img02{animation-delay: 2s;}
+.img03{animation-delay: 4s;}
+.img04{animation-delay: 7s;}
+.img05{animation-delay: 8s;}
+
+
+
+
