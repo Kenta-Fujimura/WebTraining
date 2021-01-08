@@ -93,7 +93,7 @@
         <% }%>
         <input type="number" name=sbet min="1" max=<%=coin %> value=<%= bet%>>BET
         <input type="hidden" name=scoin value=<%= coin %>>
-        <input type="submit" name="submit_btn" value=<%= buttonName%>>
+        <input type="submit"  name="submit_btn" value=<%= buttonName%>>
         </form>
       </td>
     </tr>
