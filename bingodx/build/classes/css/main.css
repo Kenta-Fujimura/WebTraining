@@ -33,12 +33,12 @@ img{
 .img04{animation-delay: 7s;}
 .img05{animation-delay: 8s;}
 
+.button {
 
-.btn:hover{
-      box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
-      transform: translateY(-5px);
-      cursor: pointer;
-    }
+	}
+.button:hover {
+  cursor: pointer;
+ }
 
 
 
